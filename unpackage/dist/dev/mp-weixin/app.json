@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/User/User"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8",
+    "navigationStyle": "custom"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#4362fe",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "selectedIconPath": "/static/jiaohang/gA.png",
+        "iconPath": "static/jiaohang/w91.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/User/User",
+        "selectedIconPath": "/static/jiaohang/FM1.png",
+        "iconPath": "static/jiaohang/RG.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

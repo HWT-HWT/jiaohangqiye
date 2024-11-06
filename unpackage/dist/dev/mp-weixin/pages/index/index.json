@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "zone": "../../components/Zone",
+    "video-vue": "../../components/videoVue",
+    "uni-search-bar": "../../uni_modules/uni-search-bar/components/uni-search-bar/uni-search-bar"
+  }
+}

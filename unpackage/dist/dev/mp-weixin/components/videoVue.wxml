@@ -1,0 +1,1 @@
+<view class="video-cover data-v-806337ca"><view class="cover data-v-806337ca"><slot name="image"></slot></view><view class="name data-v-806337ca"><view class="data-v-806337ca" style="font-size:25rpx;margin:5rpx 0"><slot name="title"></slot></view><view class="data-v-806337ca" style="font-size:20rpx;color:#ccc"><slot name="text"></slot></view></view></view>
