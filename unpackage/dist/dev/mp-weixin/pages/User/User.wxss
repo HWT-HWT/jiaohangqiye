@@ -1,0 +1,169 @@
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.User.data-v-1e1b347f {
+  width: 100%;
+  background-color: #f1f2f6;
+}
+.User .navigation.data-v-1e1b347f {
+  width: 100%;
+  height: 200rpx;
+}
+.User .navigation .placeholder.data-v-1e1b347f {
+  width: 100%;
+  height: 50%;
+}
+.User .navigation .navigation-search.data-v-1e1b347f {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+.User .navigation .navigation-search .search-name.data-v-1e1b347f {
+  padding: 30rpx;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+}
+.User .navigation .navigation-search .search-search.data-v-1e1b347f {
+  flex: 1;
+  height: 100%;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20rpx;
+}
+.User .navigation .navigation-search .search-search .uni-mt-10.data-v-1e1b347f {
+  width: 100%;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 50px;
+  color: black;
+}
+.User .navigation .navigation-search .search-ioc.data-v-1e1b347f {
+  width: 25%;
+  height: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.User .navigation .navigation-search .search-ioc .ioc.data-v-1e1b347f {
+  padding: 0 10rpx;
+  display: flex;
+  align-items: center;
+}
+.User .navigation .navigation-search .search-ioc .ioc .ioc-image.data-v-1e1b347f {
+  width: 40rpx;
+  height: 40rpx;
+}
+.User .navigation .navigation-ioc.data-v-1e1b347f {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.User .navigation .navigation-ioc .navigation-ioc-name.data-v-1e1b347f {
+  width: 20%;
+  height: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.User .navigation .navigation-ioc .navigation-ioc-name .ioc.data-v-1e1b347f {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.User .navigation .navigation-ioc .navigation-ioc-name .ioc .ioc-image.data-v-1e1b347f {
+  width: 80rpx;
+  height: 75rpx;
+}
+.User .navigation .navigation-ioc .navigation-ioc-name .text.data-v-1e1b347f {
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+}
+.User .UserList.data-v-1e1b347f {
+  width: 95%;
+  background-color: #fff;
+  margin: 20rpx auto;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.User .UserList .UserList-title.data-v-1e1b347f {
+  width: 90%;
+  margin: 0 auto;
+  height: 100rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+.User .UserList .UserList-IocBox.data-v-1e1b347f {
+  width: 20%;
+  height: 150rpx;
+  margin-left: 25rpx;
+  padding: 20rpx 0;
+}
+.User .UserList .UserList-IocBox .IocBox.data-v-1e1b347f {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+.User .UserList .UserList-IocBox .IocBox .Ioc.data-v-1e1b347f {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.User .UserList .UserList-IocBox .IocBox .Ioc .Ioc-image.data-v-1e1b347f {
+  width: 56rpx;
+  height: 56rpx;
+}
+.User .UserList .UserList-IocBox .IocBox .IocText.data-v-1e1b347f {
+  width: 100%;
+  height: 40%;
+  text-align: center;
+  font-size: 28rpx;
+  color: #848c97;
+}

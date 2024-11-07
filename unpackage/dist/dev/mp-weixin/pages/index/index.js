@@ -8,9 +8,6 @@ const _sfc_main = {
     return {
       title: ["账户", "转账", "对账", "回单"],
       list: ["代发工资", "一键测额", "普通查询", "电子发票开立", "还款申请", "持有理财产品", "代发查询", "秒贴申请", "持有票据查询", "全部"],
-      my: ["云上交行", "电子营业执照", "电子渠道签约", "SWIFT", "智慧记账", "利率查询", "银行对账"],
-      my: ["财务软件", "法律质询", "出行服务", "企业服务", "酒店甄选"],
-      my: ["版本更新", "蓝牙激活", "用户名登录设置", "隐私协议"],
       ZoneImage: ["../static/jiaohang/bg_5.png", "../static/jiaohang/bg_6.png"],
       ZoneIoc: [
         { name: "财务软件", images: "../static/jiaohang/ioc-1.png" },
@@ -38,6 +35,26 @@ const _sfc_main = {
         { name: "欧元", BuyPrice: "765.92", SellPrice: "771.30" },
         { name: "英镑", BuyPrice: "918.79", SellPrice: "925.23" },
         { name: "日元", BuyPrice: "4638.49", SellPrice: "4671.07" }
+      ],
+      Hot: [
+        {
+          title: "【收市点评】三大股指冲高回落，全球经济恢复态势仍然偏弱",
+          data: "交硬基金 147看过",
+          time: "08:28",
+          bgImage: "../../static/jiaohang/hot_1.png"
+        },
+        {
+          title: "【债市必看】11.06债市播报",
+          data: "中欧基金 255看过",
+          time: "11-06",
+          bgImage: "../../static/jiaohang/hot_2.png"
+        },
+        {
+          title: "从债市发展讲起,聊聊利率债的配置价值|多知产周记",
+          data: "中欧基金 94看过",
+          time: "11-06",
+          bgImage: "../../static/jiaohang/hot_3.png"
+        }
       ]
     };
   },
@@ -136,7 +153,16 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         c: common_vendor.t(item.SellPrice),
         d: index
       };
-    })
+    }),
+    v: common_vendor.f($data.Hot, (item, idnex, i0) => {
+      return {
+        a: common_vendor.t(item.title),
+        b: common_vendor.t(item.data),
+        c: common_vendor.t(item.time),
+        d: item.bgImage
+      };
+    }),
+    w: _ctx.index
   };
 }
 const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-1cf27b2a"]]);

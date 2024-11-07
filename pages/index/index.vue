@@ -188,6 +188,31 @@
 				</view>
 			</view>
 		</view>
+		
+		<view class="Hot">
+			<view class="Hot-title">
+				<text class="headline">
+					热门资讯
+				</text>
+				<text class="headline-btn">
+					更多
+				</text>
+			</view>
+			<view class="Hot-content" v-for="(item,idnex) in Hot" :key="index">
+				<view class="content">
+					<view class="contentTitle">
+						{{item.title}}
+					</view>
+					<view class="FontContent">
+						<text>{{item.data}}</text>
+						<text>{{item.time}}</text>
+					</view>
+				</view>
+				<view class="content-image">
+					<image class="image" :src='item.bgImage' mode=""></image>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -199,9 +224,6 @@
 			return {
 				title:['账户','转账','对账','回单'],
 				list:['代发工资','一键测额','普通查询','电子发票开立','还款申请','持有理财产品','代发查询','秒贴申请','持有票据查询','全部'],
-				my:['云上交行','电子营业执照','电子渠道签约','SWIFT','智慧记账','利率查询','银行对账'],
-				my:['财务软件','法律质询','出行服务','企业服务','酒店甄选'],
-				my:['版本更新','蓝牙激活','用户名登录设置','隐私协议'],
 				ZoneImage:['../static/jiaohang/bg_5.png','../static/jiaohang/bg_6.png'],
 				ZoneIoc:[
 					{name:'财务软件',images:'../static/jiaohang/ioc-1.png'},
@@ -229,6 +251,17 @@
 					{name:'欧元',BuyPrice:'765.92',SellPrice:'771.30'},
 					{name:'英镑',BuyPrice:'918.79',SellPrice:'925.23'},
 					{name:'日元',BuyPrice:'4638.49',SellPrice:'4671.07'}
+				],
+				Hot:[
+					{
+						title:'【收市点评】三大股指冲高回落，全球经济恢复态势仍然偏弱',data:'交硬基金 147看过',time:'08:28',bgImage:'../../static/jiaohang/hot_1.png',
+					},
+					{
+						title:'【债市必看】11.06债市播报',data:'中欧基金 255看过',time:'11-06',bgImage:'../../static/jiaohang/hot_2.png',
+					},
+					{
+						title:'从债市发展讲起,聊聊利率债的配置价值|多知产周记',data:'中欧基金 94看过',time:'11-06',bgImage:'../../static/jiaohang/hot_3.png',
+					}
 				]
 			}
 		},
@@ -541,11 +574,13 @@
 			}
 		}
 		.customer{
-			width: 100%;
+			width: 95%;
 			height: 400rpx;
 			margin-bottom: 20rpx;
 			padding-bottom: 40rpx;
 			background-color: #fff;
+			margin: 0 auto;
+			border-radius: 10px;
 			.customer-title{
 				width: 85%;
 				height: 20%;
@@ -592,57 +627,122 @@
 				}
 			}
 		}
-	}
-	
-	.foreign-exchange{
-		width: 100%;
-		height: 100%;
-		// margin-bottom: 60px;
-		padding-bottom: 40rpx;
-		background-color: #fff;
-		.foreign-exchange-title{
-			width: 85%;
-			height: 20%;
-			display: flex;
-			font-size: 38rpx;
-			font-weight: bold;
-			align-items: center;
-			margin: 20rpx auto;
-			padding: 30rpx 0 10rpx 0;
-		}
-		.title{
+		.foreign-exchange{
 			width: 95%;
-			height: 80rpx;
-			background: #f7f8fa;
-			margin: 20rpx auto;
-			display: flex;
-			justify-content: space-between;
-			.title-one{
-				width: 32%;
-				height: 100%;
-				// border: 1px solid;
+			height: 100%;
+			margin-bottom: 20rpx;
+			padding-bottom: 40rpx;
+			background-color: #fff;
+			margin: 0 auto;
+			border-radius: 10px;
+			.foreign-exchange-title{
+				width: 85%;
+				height: 20%;
 				display: flex;
-				justify-content: center;
+				font-size: 38rpx;
+				font-weight: bold;
 				align-items: center;
-				font-size: 30rpx;
+				margin: 20rpx auto;
+				padding: 30rpx 0 10rpx 0;
+			}
+			.title{
+				width: 95%;
+				height: 80rpx;
+				background: #f7f8fa;
+				margin: 20rpx auto;
+				display: flex;
+				justify-content: space-between;
+				.title-one{
+					width: 32%;
+					height: 100%;
+					// border: 1px solid;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 30rpx;
+				}
+			}
+			.content{
+				width: 95%;
+				height: 120rpx;
+				background: #fff;
+				border-bottom:1px solid #ecedf0 ;
+				margin: 0 auto;
+				display: flex;
+				justify-content: space-between;
+				.title-one{
+					width: 32%;
+					height: 100%;
+					// border: 1px solid;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					font-size: 30rpx;
+				}
 			}
 		}
-		.content{
+		.Hot{
 			width: 95%;
-			height: 120rpx;
-			background: #fff;
-			border-bottom:1px solid #ecedf0 ;
-			margin: 0 auto;
-			display: flex;
-			justify-content: space-between;
-			.title-one{
-				width: 32%;
-				height: 100%;
+			height: 800rpx;
+			// border: 1px solid;
+			background-color: #fff;
+			margin: 20rpx auto;
+			border-radius: 10px;
+			.Hot-title{
+				width: 90%;
+				height: 15%;
 				// border: 1px solid;
 				display: flex;
-				justify-content: center;
+				margin:0 auto;
+				justify-content: space-between;
 				align-items: center;
-				font-size: 30rpx;
+				.headline{
+					font-size: 38rpx;
+					font-weight: bold;
+					letter-spacing: 1px;
+				}
+				.headline-btn{
+					font-size: 25rpx;
+					color: #4563fc;
+				}
+			}
+			.Hot-content{
+				width: 90%;
+				height: 23%;
+				border-bottom: 1px solid #ccc;
+				margin: 0 auto;
+				padding:20rpx 0;
+				display: flex;
+				.content{
+					flex: 1;
+					height: 100%;
+					.contentTitle{
+						width: 95%;
+						height: 75%;
+						margin: 0 auto;
+						font-size: 28rpx;
+						font-weight: bold;
+					}
+					.FontContent{
+						width: 95%;
+						margin: 0 auto;
+						height: 25%;
+						display: flex;
+						justify-content: space-between;
+						font-size: 24rpx;
+						color: #ccc;
+						align-items: center;
+					}
+				}
+				.content-image{
+					width: 40%;
+					height: 100%;
+					.image{
+						width: 100%;
+						height: 100%;
+						
+					}
+				}
 			}
 		}
 	}
