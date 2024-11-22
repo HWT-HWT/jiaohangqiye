@@ -11,6 +11,30 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path" : "pages/Detail/Detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "余额查询",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/subsidiary/subsidiary",
+			"style" : 
+			{
+				"navigationBarTitleText" : "明细查询",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/Repayment/Repayment",
+			"style" : 
+			{
+				"navigationBarTitleText" : "还款申请",
+				"navigationStyle":"default"
+			}
 		}
 	],
 	"globalStyle": {

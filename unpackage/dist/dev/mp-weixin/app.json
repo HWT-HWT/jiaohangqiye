@@ -1,8 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/User/User"
+    "pages/User/User",
+    "pages/Detail/Detail",
+    "pages/subsidiary/subsidiary",
+    "pages/Repayment/Repayment"
   ],
+  "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
