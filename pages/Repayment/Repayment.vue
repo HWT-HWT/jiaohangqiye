@@ -2,7 +2,7 @@
 	<view class="repayment">
 		<view class="repayment-list">
 			<view class="chebox">
-				<checkbox style="transform: scale(0.7)"/>贷款编号: 4412024000159586 
+				<checkbox @click="btncheck()" style="transform: scale(0.7)"/>贷款编号: 4412024000159586 
 				 <view style="color: #5b6eb7; border-radius:5rpx ; margin-left: 40rpx;width: 100rpx;height: 40rpx;  background-color: #edf0ff; display: flex; justify-content: center; align-items: center; font-size: 25rpx;">正常</view>
 			</view>
 			<view class="repayment-list-text">
@@ -21,19 +21,22 @@
 		
 		<view class="foot">
 			<view class="foot-left">
-				<view style="width: 100%; margin-top: 20rpx; margin-left: 30rpx; line-height: 50rpx;">
+				<view style="width: 100%; margin-top: 20rpx; margin-left: 30rpx; line-height: 50rpx;"v-if="value">
+					选中 <text style="color: #4f7199;">1笔</text>
+					<br />
+					合计 <text style="color: #4f7199;">1笔</text>
+				</view>
+				<view style="width: 100%; margin-top: 20rpx; margin-left: 30rpx; line-height: 50rpx;" v-else>
 					选中 <text style="color: #4f7199;">0笔</text>
 					<br />
 					合计 <text style="color: #4f7199;">0笔</text>
 				</view>
-				
-				
 			</view>
 			<view class="foot-right">
 				<view class="btn">
 					到期还款
 				</view>
-				<view class="btn">
+				<view class="btn" :style="{background: value ? '#739bfd' : '', color: value ? '#fff' : ''}">
 					提前还款
 				</view>
 			</view>
@@ -45,8 +48,13 @@
 	export default {
 		data() {
 			return {
-				
+				value:false,
 			};
+		},
+		methods:{
+			btncheck(){
+				this.value=!this.value
+			}
 		}
 	}
 </script>

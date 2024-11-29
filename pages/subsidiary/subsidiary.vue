@@ -32,7 +32,7 @@
 					<view v-if="hopeBeginTime">
 						支出-1213976.78 &nbsp; 收入<text style="color: red;">+1225002.00</text>
 						<br />
-						<text style="color: #afafaf; font-size: 20rpx;">共 12 笔</text>
+						<text style="color: #afafaf; font-size: 20rpx;">共 {{datalist.length-3}} 笔</text>
 						
 						<text style="color: #afafaf; font-size: 20rpx;margin-left:200rpx;">共 3 笔</text>
 					</view>
@@ -44,172 +44,15 @@
 					</view>
 				</view>
 				
-				
-				<view class="list-Money" v-if="hopeBeginTime" >
+				<view class="list-Money"   v-if="hopeBeginTime" v-for="(item,index) in datalist" :key="index">
 					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
+						<p style="font-size: 28rpx; font-weight: bold;">{{item.name}}</p>
+						<text style="font-size: 28rpx; font-weight: bold;">{{item.namelist}}</text>
+						<p style="font-size: 25rpx;color: #ccc;">{{item.minititle}}</p>
 					</view>
 					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">+￥1200000.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-05-31 11:11:22</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"  style="padding-bottom: 55rpx;"  v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold; ">应付代收业务款项-代付业务专户</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441114012890900100012799</text>
-						<p style="font-size: 25rpx;color: #ccc;">代发营销费用-</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥1200000.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-05-31 11:53:49</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">曾凡忠</p>
-						<text style="font-size: 28rpx; font-weight: bold;">6222033602015955766</text>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">+￥25000.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-06-21 17:08:51</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥2570.40</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-06-21 17:16:38</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						
-						<p style="font-size: 25rpx;color: #ccc;">本行个人账户成功笔数代收费用标准</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥0.70</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-06-22 06:01:34</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 25rpx;color: #ccc;">20240524开户手续费缓收/205000420240524</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥50.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-02 06:06:19</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 25rpx;color: #ccc;">20240524USBKEY费缓收（网银）/2051000420</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥38.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-02 06:06:21</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 25rpx;color: #ccc;">2024网银服务年费</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥150.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-03 16:10:55</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 25rpx;color: #ccc;">2024网银证书服务年费,用户00002</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥75.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-03 17:22:12</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 25rpx;color: #ccc;">2024网银证书服务年费,用户00001</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥75.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-03 17:50:42</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥3672.56</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-07-22 16:48:20</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥3672.56</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-08-21 16:21:10</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">20240922利息入账</p>
-						<text style="font-size: 28rpx; font-weight: bold;">4411140127010100100001899</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">+￥2.00</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-08-21 16:21:10</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥3672.56</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-09-23 16:16:11</p>
-					</view>
-				</view>
-				
-				<view class="list-Money"   v-if="hopeBeginTime">
-					<view class="list-Money-left content">
-						<p style="font-size: 28rpx; font-weight: bold;">广州伊玉贸易有限公司</p>
-						<text style="font-size: 28rpx; font-weight: bold;">441899999903000775608</text>
-						<p style="font-size: 25rpx;color: #ccc;">贷款利息</p>
-					</view>
-					<view class="list-Money-rigth content">
-						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">-￥3672.56</p>
-						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">2024-10-23 16:15:21</p>
+						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">{{item.money}}</p>
+						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">{{item.time}}</p>
 					</view>
 				</view>
 				
@@ -325,6 +168,25 @@
 					{name:'普通查询',icon:'../../static/jiaohang/sanjiaoxing.png'},
 					{name:'筛选',icon:'../../static/jiaohang/shanxuan.png'},
 				],
+				
+				datalist:[
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'+￥1200000.00',time:'2024-05-31 11:11:22'},
+					{name:'应付代收业务款项-代付业务专户',namelist:'441114012890900100012799',minititle:'代发营销费用-',money:'-￥1200000.00',time:'2024-05-31 11:53:49'},
+					{name:'曾凡忠',namelist:'6222033602015955766',money:'+￥25000.00',time:'2024-06-21 17:08:51'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥2570.40',time:'2024-06-21 17:16:38'},
+					{minititle:'本行个人账户成功笔数代收费用标准',money:'-￥0.70',time:'2024-06-22 06:01:34'},
+					{minititle:'20240524开户手续费缓收/205000420240524',money:'-￥50.00',time:'2024-07-02 06:06:19'},
+					{minititle:'20240524USBKEY费缓收（网银）/2051000420',money:'-￥38.00',time:'2024-07-02 06:06:21'},
+					{minititle:'2024网银服务年费',money:'-￥150.00',time:'2024-07-03 16:10:55'},
+					{minititle:'2024网银证书服务年费,用户00002',money:'-￥75.00',time:'2024-07-03 17:22:12'},
+					{minititle:'2024网银证书服务年费,用户00001',money:'-￥75.00',time:'2024-07-03 17:50:42'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-07-22 16:48:20'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-08-21 16:21:10'},
+					{name:'20240922利息入账',namelist:'4411140127010100100001899',minititle:'贷款利息',money:'+￥2.00',time:'2024-08-21 16:21:12'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-09-23 16:16:11'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-10-23 16:15:21'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-11-23 16:15:55'},
+				],
 				hopeBeginTime: '',
 				dateKey: '',
 				Istrue:true
@@ -421,16 +283,14 @@
 			}
 			.list-Money{
 				width: 100%;
-				height: 100%;
 				margin: 0 auto;
 				margin-top: 2rpx;
 				line-height: 50rpx;
 				background-color: #fff;
 				display: flex;
+				padding: 10rpx 0;
 				.content{
 					width: 48%;
-					height: 100%;
-					// border: 1px solid;
 					display: flex;
 					flex-wrap: wrap;
 					align-items: center;

@@ -1,24 +1,12 @@
 <template>
 	<view class="layout">
-		
 		<view class="navigation">
 			<view class="placeholder">
 				
 			</view>
-			<view class="navigation-search">
-				<view class="search-name">
-					退出
-				</view>
-				<view class="search-search">
-					<uni-search-bar class="uni-mt-10"  radius="50" bg-color="none"  placeholder="搜索" clearButton="auto" cancelButton="none"  />
-				</view>
-				<view class="search-ioc">
-					<view class="ioc" v-for="item in 3" :key='item'>
-						<image class="ioc-image" :src='`../../static/jiaohang/Nav_${item+1}.png`' mode=""></image>
-					</view>
-				</view>
-			</view>
 			
+			<SearchBox></SearchBox>
+
 			<view class="navigation-ioc">
 				<view class="navigation-ioc-name" v-for="(item,index) in title" :key="index">
 					<view class="ioc" @click="NavToDetail(index)">
@@ -83,9 +71,6 @@
 			</view>
 		</view>
 		
-		<!-- <Zone :Image="ZoneImage" :Ioc="ZoneIoc">小微专区</Zone>
-		
-		<Zone :Image="financeImage" :Ioc="financeIoc">财务管理专区</Zone> -->
 		
 		<view class="Zone">
 			<view class="Zone-title">
@@ -268,6 +253,8 @@
 <script>
 	import Zone from '@/components/Zone.vue'
 	import videoVue from '@/components/videoVue.vue'
+	import SearchBox from '@/components/navigationSearch.vue'
+	import {gologin} from'@/components/login.js'
 	export default {
 		data() {
 			return {
@@ -314,6 +301,7 @@
 				]
 			}
 		},
+		
 		mounted() {
 		    // 在组件挂载后获取当前时间
 		    this.updateCurrentTime();
@@ -329,20 +317,23 @@
 			  this.currentTime = `${hours}:${minutes}:${seconds}`;
 			},
 			NavToDetail(index){
-				uni.navigateTo({
-					url:'/pages/Detail/Detail'
-				})
+				console.log(index);
+				index === 0 ? gologin('/pages/Detail/Detail') : ''
+				index === 1 ? gologin('/pages/transfer/transfer') : ''
+				index === 2 ? gologin('/pages/Reconciliation/Reconciliation') : ''
+				index === 3 ? gologin('/pages/Receipt/Receipt') : ''
 			},
 			NavGo(index){
-				console.log(index);
-				index === 4 ? uni.navigateTo({
-					url:'/pages/Repayment/Repayment'
-				}) : ''
-			}
+				index === 4 ? gologin('/pages/Repayment/Repayment') :'',
+				index === 9 ? gologin('/pages/more/more') :''
+			},
+			
+			
 		  },
 		components:{
 			Zone,
-			videoVue
+			videoVue,
+			SearchBox
 		}
 	}
 </script>
@@ -354,11 +345,11 @@
 		overflow: hidden;
 		.navigation{
 			width: 100%;
-			height: 350rpx;
+			height: 450rpx;
 			background: linear-gradient(#526df2, #79a4ff);
 			.placeholder{
 				width: 100%;
-				height: 25%;
+				height: 15%;
 			}
 			.navigation-search{
 				width: 100%;
@@ -383,7 +374,7 @@
 					padding-right: 20rpx;
 					.uni-mt-10{
 						width: 100%;
-						height: 50rpx;
+						height: 20rpx;
 						display: flex; 
 						align-items: center;
 						border: 1px solid;
@@ -412,10 +403,11 @@
 				}
 			}
 			.navigation-ioc{
-				width: 100%;
-				height: 40%;
+				width: 95%;
+				height: 30%;
 				display: flex;
 				justify-content: space-between;
+				margin: 0 auto;
 				margin-top: 10px;
 				.navigation-ioc-name{
 					width: 20%;

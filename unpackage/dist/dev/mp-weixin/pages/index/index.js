@@ -260,6 +260,9 @@ var _default = {
       }]
     };
   },
+  created: function created() {
+    this.login();
+  },
   mounted: function mounted() {
     // 在组件挂载后获取当前时间
     this.updateCurrentTime();
@@ -284,6 +287,11 @@ var _default = {
       index === 4 ? uni.navigateTo({
         url: '/pages/Repayment/Repayment'
       }) : '';
+    },
+    login: function login() {
+      uni.navigateTo({
+        url: '/pages/login/login'
+      });
     }
   },
   components: {

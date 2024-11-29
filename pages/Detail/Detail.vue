@@ -29,11 +29,11 @@
 					</view>
 					
 					<view class="text">
-						余额:11,025.22
+						余额:7,352.66
 					</view>
 					
 					<view class="text">
-						可支付金额11,025.22
+						可支付金额7,352.66
 					</view>
 				</view>
 				<view class="Account-content-icon" @click="NavTo">

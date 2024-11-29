@@ -1,12 +1,14 @@
 <template>
 	<view class="User">
-		
 		<view class="navigation">
 			<view class="placeholder">
 				
 			</view>
 			<view class="navigation-search">
-				<view class="search-name">
+				<view class="search-name" v-if="!account" @click="login">
+					登录
+				</view>
+				<view class="search-name" v-else @click="quit">
 					退出
 				</view>
 				<view class="search-search">
@@ -18,22 +20,11 @@
 					</view>
 				</view>
 			</view>
-			
-			<view class="navigation-ioc">
-				<view class="navigation-ioc-name" v-for="(item,index) in title" :key="index">
-					<view class="ioc">
-						<image class="ioc-image" :src="`../../static/jiaohang/title_${index+1}.png`" mode=""></image>
-					</view>
-					<view class="text">
-						{{item}}
-					</view>
-				</view>
-			</view>
+
 		</view>
 		
-		<view class="business">
+		<view class="business" v-if="account">
 			<view class="business-card">
-				
 				<view class="business-card-title">
 					<view class="business-card-title-left">
 						<image style="width: 120rpx; height: 120rpx;" src="../../static/jiaohang/Q9.png" mode=""></image>
@@ -72,7 +63,7 @@
 				</view>
 			</view>
 			
-			<view class="outlets">
+			<view class="outlets" >
 				<view class="outlets-title">
 					我的网点
 				</view>
@@ -125,6 +116,9 @@
 	export default {
 		data() {
 			return {
+				// 获取登录信息
+				account:'',
+				
 				UserList:['云上交行','电子营业执照','电子渠道签约','SWIFT','智慧记账','利率查询','银行对账'],
 
 				UserListT:[
@@ -167,8 +161,34 @@
 				business:['企业名片','客户经理','常用收款人','单据查验']
 			}
 		},
+		mounted() {
+			this.account = uni.getStorageSync('account')
+		},
 		methods: {
-			
+			quit(){
+				uni.removeStorage({
+					key:'account',
+					// 删除用户信息时操作
+					success: function (res) {
+						this.account='',
+						// 跳转到login
+						uni.reLaunch({
+							url:'/pages/login/login'
+						})
+						// 弹出提示
+						uni.showToast({
+							title: '退出成功',
+							icon: 'none',
+							duration:2000
+						})
+					}
+				})
+			},
+			login(){
+				uni.navigateTo({
+					url:'/pages/login/login'
+				})
+			},
 		}
 	}
 </script>
@@ -209,7 +229,7 @@
 					padding-right: 20rpx;
 					.uni-mt-10{
 						width: 100%;
-						height: 50rpx;
+						height: 20rpx;
 						display: flex; 
 						align-items: center;
 						border: 1px solid;
