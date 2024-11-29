@@ -12,7 +12,7 @@
 
 <script>
 	export default {
-		name:"video",
+		name:"videoo",
 		data() {
 			return {
 				

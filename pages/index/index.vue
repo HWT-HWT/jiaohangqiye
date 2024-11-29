@@ -1,27 +1,15 @@
 <template>
 	<view class="layout">
-		
 		<view class="navigation">
 			<view class="placeholder">
 				
 			</view>
-			<view class="navigation-search">
-				<view class="search-name">
-					登录
-				</view>
-				<view class="search-search">
-					<uni-search-bar class="uni-mt-10"  radius="50" bg-color="none"  placeholder="搜索" clearButton="auto" cancelButton="none"  />
-				</view>
-				<view class="search-ioc">
-					<view class="ioc" v-for="item in 3" :key='item'>
-						<image class="ioc-image" :src='`../../static/jiaohang/Nav_${item}.png`' mode=""></image>
-					</view>
-				</view>
-			</view>
 			
+			<SearchBox></SearchBox>
+
 			<view class="navigation-ioc">
 				<view class="navigation-ioc-name" v-for="(item,index) in title" :key="index">
-					<view class="ioc">
+					<view class="ioc" @click="NavToDetail(index)">
 						<image class="ioc-image" :src="`../../static/jiaohang/title_${index+1}.png`" mode=""></image>
 					</view>
 					<view class="text">
@@ -33,7 +21,7 @@
 		
 		<view class="layout-list">
 			<view class="list">
-				<view class="list-ioc" v-for="(item,index) in list" :key="index">
+				<view class="list-ioc" v-for="(item,index) in list" :key="index" @click="NavGo(index)">
 					<view class="ioc">
 						<image class="ioc-image" :src="`../../static/jiaohang/list-${index+1}.png`" mode=""></image>
 					</view>
@@ -46,7 +34,7 @@
 		
 		<view class="announcement">
 			<view class="announcement-ioc">
-				<image class=".ioc-image" src="../../static/jiaohang/gong_g.png" mode=""></image>
+				<image class="ioc-image" src="../../static/jiaohang/gong_g.png" mode=""></image>
 			</view>
 			<view class="announcement-title">
 				<text style="border-right: 1px solid #ccc; padding: 3px; ">关于交通银行部分国际业务服务收费表...</text>
@@ -83,9 +71,55 @@
 			</view>
 		</view>
 		
-		<Zone :Image="ZoneImage" :Ioc="ZoneIoc">小微专区</Zone>
 		
-		<Zone :Image="financeImage" :Ioc="financeIoc">财务管理专区</Zone>
+		<view class="Zone">
+			<view class="Zone-title">
+				小微专区
+			</view>
+			
+			<view class="Zone-image">
+				<view class="images" v-for="item in ZoneImage" :key="item">
+					<image :src="item" mode=""></image>
+				</view>
+			</view>
+			
+			<view class="Zone-ioc">
+				<view class="ioc" v-for="(item,index) in financeIoc" :key="index">
+					<view class="ioc-image">
+						<image class="image" :src="item.images" mode=""></image>
+					</view>
+					<view class="ioc-text">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		
+		<view class="Zone">
+			<view class="Zone-title">
+				财务管理专区
+			</view>
+			
+			<view class="Zone-image">
+				<view class="images" v-for="item in financeImage" :key="item">
+					<image :src="item" mode=""></image>
+				</view>
+			</view>
+			
+			<view class="Zone-ioc">
+				<view class="ioc" v-for="(item,index) in ZoneIoc" :key="index">
+					<view class="ioc-image">
+						<image class="image" :src="item.images" mode=""></image>
+					</view>
+					<view class="ioc-text">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+			
+		</view>
+		
 		
 		<view class="videoo">
 			<view class="video-title">
@@ -198,7 +232,7 @@
 					更多
 				</text>
 			</view>
-			<view class="Hot-content" v-for="(item,idnex) in Hot" :key="index">
+			<view class="Hot-content" v-for="(item,index) in Hot" :key="index">
 				<view class="content">
 					<view class="contentTitle">
 						{{item.title}}
@@ -219,24 +253,26 @@
 <script>
 	import Zone from '@/components/Zone.vue'
 	import videoVue from '@/components/videoVue.vue'
+	import SearchBox from '@/components/navigationSearch.vue'
+	import {gologin} from'@/components/login.js'
 	export default {
 		data() {
 			return {
 				title:['账户','转账','对账','回单'],
 				list:['代发工资','一键测额','普通查询','电子发票开立','还款申请','持有理财产品','代发查询','秒贴申请','持有票据查询','全部'],
-				ZoneImage:['../static/jiaohang/bg_5.png','../static/jiaohang/bg_6.png'],
+				ZoneImage:['../../static/jiaohang/bg_5.png','../../static/jiaohang/bg_6.png'],
 				ZoneIoc:[
-					{name:'财务软件',images:'../static/jiaohang/ioc-1.png'},
-					{name:'法律咨询',images:'../static/jiaohang/ioc-2.png'},
-					{name:'出行服务',images:'../static/jiaohang/ioc-3.png'},
-					{name:'企业服务',images:'../static/jiaohang/ioc-4.png'},
+					{name:'财务软件',images:'../../static/jiaohang/ioc-1.png'},
+					{name:'法律咨询',images:'../../static/jiaohang/ioc-2.png'},
+					{name:'出行服务',images:'../../static/jiaohang/ioc-3.png'},
+					{name:'企业服务',images:'../../static/jiaohang/ioc-4.png'},
 					],
-				financeImage:['../static/jiaohang/bg_one_1.png','../static/jiaohang/bg_one_2.png'],
+				financeImage:['../../static/jiaohang/bg_one_1.png','../../static/jiaohang/bg_one_2.png'],
 				financeIoc:[
-					{name:'补录管理',images:'../static/jiaohang/bg_one_ioc_1.png'},
-					{name:'账务核销管理',images:'../static/jiaohang/bg_one_ioc_2.png'},
-					{name:'业务核销管理',images:'../static/jiaohang/bg_one_ioc_3.png'},
-					{name:'日历模式',images:'../static/jiaohang/bg_one_ioc_4.png'},
+					{name:'补录管理',images:'../../static/jiaohang/bg_one_ioc_1.png'},
+					{name:'账务核销管理',images:'../../static/jiaohang/bg_one_ioc_2.png'},
+					{name:'业务核销管理',images:'../../static/jiaohang/bg_one_ioc_3.png'},
+					{name:'日历模式',images:'../../static/jiaohang/bg_one_ioc_4.png'},
 					],
 				customer:[
 					{name:'资信证明',ioc:'/static/jiaohang/ioc_one_1.png'},
@@ -265,6 +301,7 @@
 				]
 			}
 		},
+		
 		mounted() {
 		    // 在组件挂载后获取当前时间
 		    this.updateCurrentTime();
@@ -278,11 +315,25 @@
 			  const minutes = String(now.getMinutes()).padStart(2, '0');
 			  const seconds = String(now.getSeconds()).padStart(2, '0');
 			  this.currentTime = `${hours}:${minutes}:${seconds}`;
-			}
+			},
+			NavToDetail(index){
+				console.log(index);
+				index === 0 ? gologin('/pages/Detail/Detail') : ''
+				index === 1 ? gologin('/pages/transfer/transfer') : ''
+				index === 2 ? gologin('/pages/Reconciliation/Reconciliation') : ''
+				index === 3 ? gologin('/pages/Receipt/Receipt') : ''
+			},
+			NavGo(index){
+				index === 4 ? gologin('/pages/Repayment/Repayment') :'',
+				index === 9 ? gologin('/pages/more/more') :''
+			},
+			
+			
 		  },
 		components:{
 			Zone,
-			videoVue
+			videoVue,
+			SearchBox
 		}
 	}
 </script>
@@ -294,11 +345,11 @@
 		overflow: hidden;
 		.navigation{
 			width: 100%;
-			height: 350rpx;
+			height: 450rpx;
 			background: linear-gradient(#526df2, #79a4ff);
 			.placeholder{
 				width: 100%;
-				height: 25%;
+				height: 15%;
 			}
 			.navigation-search{
 				width: 100%;
@@ -320,11 +371,10 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					// border: 1px solid;
 					padding-right: 20rpx;
 					.uni-mt-10{
 						width: 100%;
-						height: 60rpx;
+						height: 20rpx;
 						display: flex; 
 						align-items: center;
 						border: 1px solid;
@@ -353,10 +403,11 @@
 				}
 			}
 			.navigation-ioc{
-				width: 100%;
-				height: 40%;
+				width: 95%;
+				height: 30%;
 				display: flex;
 				justify-content: space-between;
+				margin: 0 auto;
 				margin-top: 10px;
 				.navigation-ioc-name{
 					width: 20%;
@@ -411,6 +462,7 @@
 					width: 80%;
 					padding: 10px 0;
 					margin: 0 auto;
+					// border: 1px solid;
 					.ioc{
 						width: 80rpx;
 						aspect-ratio: 1/1;
@@ -534,6 +586,72 @@
 						margin-top: 10rpx;
 						width: 100%;
 						height: 49%;
+					}
+				}
+			}
+		}
+		.Zone{
+			width: 95%;
+			height: 400rpx;
+			// border: 1px solid;
+			margin: 0 auto;
+			margin-top: 20rpx;
+			border-radius:10px;
+			background-color: #fff;
+			image{
+				width: 100%;
+				height: 100%;
+				border-radius:10px;
+			}
+			.Zone-title{
+				width: 100%;
+				height: 20%;
+				margin-left: 40rpx;
+				display: flex;
+				align-items: center;
+				font-size: 38rpx;
+				font-weight: bold;
+				letter-spacing: 1px;
+			}
+			.Zone-image{
+				width: 100%;
+				height: 50%;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				.images{
+					width: 45%;
+					height: 85%;
+					margin-left: 5rpx;
+					image{
+						border-radius: 10px;
+					}
+				}
+			}
+			.Zone-ioc{
+				width: 100%;
+				display: flex;
+				.ioc{
+					width: 25%;
+					height: 100%;
+					.ioc-image{
+						width: 100%;
+						height: 70%;
+						margin-top: 10rpx;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						.image{
+							width: 60rpx;
+							height: 65rpx;
+						}
+					}
+					.ioc-text{
+						margin-top: 10rpx;
+						width: 100%;
+						height: 30%;
+						font-size: 20rpx;
+						text-align: center;
 					}
 				}
 			}

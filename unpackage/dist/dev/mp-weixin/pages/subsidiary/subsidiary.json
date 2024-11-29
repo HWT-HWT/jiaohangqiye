@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "明细查询",
+  "navigationStyle": "default",
+  "usingComponents": {
+    "my-datetime": "/components/my-datetime/my-datetime",
+    "company": "/components/Company",
+    "subsidiary-list-vue": "/pages/subsidiary/subsidiaryList"
+  }
+}

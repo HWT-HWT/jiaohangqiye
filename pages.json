@@ -11,6 +11,108 @@
 			"style": {
 				"navigationBarTitleText": "uni-app"
 			}
+		},
+		{
+			"path" : "pages/Detail/Detail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "余额查询",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/subsidiary/subsidiary",
+			"style" : 
+			{
+				"navigationBarTitleText" : "明细查询",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/Repayment/Repayment",
+			"style" : 
+			{
+				"navigationBarTitleText" : "还款申请",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/login/login",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/more/more",
+			"style" : 
+			{
+				"navigationBarTitleText" : "全部服务",
+				"navigationStyle":"default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							},
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue654",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+
+			}
+		},
+		{
+			"path" : "pages/transfer/transfer",
+			"style" : 
+			{
+				"navigationBarTitleText" : "企业转账",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/Reconciliation/Reconciliation",
+			"style" : 
+			{
+				"navigationBarTitleText" : "明细对账单",
+				"navigationStyle":"default"
+			}
+		},
+		{
+			"path" : "pages/Receipt/Receipt",
+			"style" : 
+			{
+				"navigationBarTitleText" : "电子回单查询",
+				"navigationStyle":"default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path" : "pages/ReceiptList/ReceiptList",
+			"style" : 
+			{
+				"navigationBarTitleText" : "",
+				"navigationStyle": "default"
+			}
 		}
 	],
 	"globalStyle": {
