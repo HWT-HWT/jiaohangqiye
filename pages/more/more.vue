@@ -31,6 +31,7 @@
 		</view>
 		
 		
+<<<<<<< HEAD
 		<z-tabs :list="AllList" @change="tabsChange"></z-tabs>
 		<swiper :current="current" class="swiper" @transitionend="" >
 		    <swiper-item v-for="(item,index) in AllList" :key="index" >
@@ -68,6 +69,62 @@
 			  </view>
 		    </swiper-item>
 			
+=======
+		<z-tabs :list="list" @change="tabsChange"></z-tabs>
+		<swiper :current="current" class="swiper" @transitionend="">
+		    <swiper-item class="swiper-item" v-for="(item, index) in list" :key="index">
+				
+		      <view class="swiper-title" >
+		      	<view class="title-box" v-for="(sum,num) in titleboxList" :key="num" @click="scrollToText(num)">
+		      		{{sum}}
+		      	</view>
+		      </view>
+			  
+			  <view class="swiper-title-box">
+			  	<scroll-view class="scroll-view" scroll-y="true" :scroll-top="scrollTop" @scroll="scroll">
+					
+					<view class="scroll-view-box"  v-for="(item,index) in titleboxList" :key="index" >
+						<view class="scroll-view-itle" id='targetText'>
+							<image :src="`../../static/jiaohang/list-${index+1}.png`" mode=""></image>{{item}}
+						</view>
+						<view class="scroll-view-text">
+							
+							<view class="scroll-view-text-box">
+								<view class="scroll-view-text-box-image">
+									<image :src="`../../static/jiaohang/list-${index+1}.png`" mode=""></image>
+								</view>
+								<view class="scroll-view-text-box-text">
+									账户余额
+								</view>
+							</view>
+							
+							<view class="scroll-view-text-box">
+								<view class="scroll-view-text-box-image">
+									<image :src="`../../static/jiaohang/list-${index+1}.png`" mode=""></image>
+								</view>
+								<view class="scroll-view-text-box-text">
+									账户余额
+								</view>
+							</view>
+							
+							<view class="scroll-view-text-box">
+								<view class="scroll-view-text-box-image">
+									<image :src="`../../static/jiaohang/list-${index+1}.png`" mode=""></image>
+								</view>
+								<view class="scroll-view-text-box-text">
+									账户余额
+								</view>
+							</view>
+							
+						</view>
+					</view>
+					<view class="" style="height: 850rpx;">
+						
+					</view>
+			  	</scroll-view>
+			  </view>
+		    </swiper-item>
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		</swiper>
 	</view>
 </template>
@@ -77,13 +134,19 @@
 	export default {
 		data() {
 			return {
+<<<<<<< HEAD
 				list:['代发薪资','一键测额','普通查询','电子发票开立','还款申请','持有理财产品','代发查询','秒贴申请','持有票据查询'],
 				listMore:['代发薪资','一键测额','普通查询','电子发票开立','还款申请'],
+=======
+				list:['代发工资','一键测额','普通查询','电子发票开立','还款申请','持有理财产品','代发查询','秒贴申请','持有票据查询'],
+				listMore:['代发工资','一键测额','普通查询','电子发票开立','还款申请'],
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				ListIsture:'flase',
 				titleMore:['账户','转账业务','代发代扣','电票业务','投资理财','国际业务','企业融资','金融服务','产业链服务','电子商务','数字人民币','企业管家','增值服务','个人设置'],
 				current: 0,
 				titleboxList:['余额查询','明细查询','电子回单打印','银企对账','企业账户','账号管理','现金','单位账号申请','单位结算卡','子账簿','凭证订购'],
 				
+<<<<<<< HEAD
 				AllList:[
 					{
 						name:'配置管理',
@@ -1467,6 +1530,8 @@
 				
 				
 				
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				scrollTop: 0,
 				old: {
 					scrollTop: 0
@@ -1476,9 +1541,12 @@
 		onNavigationBarButtonTap(e) {
 			console.log('自定义按钮被点击')
 		},
+<<<<<<< HEAD
 		created() {
 			
 		},
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		components:{
 			layoutList
 		},
@@ -1591,6 +1659,7 @@
 						width: 100%;
 						height: 100%;
 						.scroll-view-box{
+<<<<<<< HEAD
 							margin: 40rpx auto;
 							display: flex;
 							flex-wrap: wrap;
@@ -1609,10 +1678,29 @@
 								image{
 									width:45rpx;
 									height: 45rpx;
+=======
+							width: 100%;
+							margin: 40rpx auto;
+							.scroll-view-itle{
+								width: 90%;
+								margin: 0 auto;
+								border-bottom: 1px solid #ccc;
+								display: flex;
+								align-items: center;
+								padding: 10rpx;
+								font-size: 28rpx;
+								font-weight: bold;
+								// border: 1px solid;
+								font-family: '黑体';
+								image{
+									width:40rpx;
+									height: 40rpx;
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 									margin: 0 15rpx;
 								}
 							}
 							.scroll-view-text{
+<<<<<<< HEAD
 								display: flex;
 								font-size: 28rpx;
 								font-family: '黑体';
@@ -1625,10 +1713,23 @@
 									align-items: center;
 									padding: 0 30rpx;
 									text-align: center;
+=======
+								width: 100%;
+								margin: 0 30rpx;
+								display: flex;
+								flex-wrap: wrap;
+								align-items: center;
+								font-size: 28rpx;
+								font-family: '黑体';
+								.scroll-view-text-box{
+									width: 33%;
+									// border: 1px solid;
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 									.scroll-view-text-box-image{
 										width: 100%;
 										display: flex;
 										justify-content: center;
+<<<<<<< HEAD
 										align-items: center;
 										image{
 												width: 50rpx;
@@ -1645,6 +1746,23 @@
 										margin-top: 5rpx;
 									}
 								}
+=======
+										margin: 10rpx auto;
+										image{
+											width: 50rpx;
+											height: 50rpx;
+										}
+									}
+									.scroll-view-text-box-text{
+										width: 100%;
+										font-size: 20rpx;
+										margin: 10rpx auto;
+										display: flex;
+										justify-content: center;
+									}
+								}
+								
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 							}
 						}
 					}

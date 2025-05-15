@@ -3,7 +3,11 @@
 		
 		<company></company>
 		
+<<<<<<< HEAD
 		<view class="DetailSet" @click="GoDefaultSetting">
+=======
+		<view class="DetailSet">
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			<view class="DetailSetText">
 				默认账户设置
 			</view>
@@ -17,10 +21,16 @@
 				<view class="Account-title-text">
 					活期账户信息
 				</view>
+<<<<<<< HEAD
 				<view class="Account-title-icon" @click="isEye">
 					隐藏
 					<image class="Account-title-icon-image" src="../../static/jiaohang/ioc_eye.png" mode="" v-if="eye"></image>
 					<image class="Account-title-icon-image" src="../../static/jiaohang/eye_hide.png" mode="" v-else></image>
+=======
+				<view class="Account-title-icon">
+					隐藏
+					<image class="Account-title-icon-image" src="../../static/jiaohang/ioc_eye.png" mode=""></image>
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				</view>
 			</view>
 			<view class="Account-content">
@@ -30,11 +40,19 @@
 					</view>
 					
 					<view class="text">
+<<<<<<< HEAD
 						余额:{{eye ? "30,544.10" : '******'}}
 					</view>
 					
 					<view class="text">
 						可支付金额:{{eye ? "30,544.10" : '******'}}
+=======
+						余额:7,352.66
+					</view>
+					
+					<view class="text">
+						可支付金额7,352.66
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 					</view>
 				</view>
 				<view class="Account-content-icon" @click="NavTo">
@@ -43,7 +61,11 @@
 				</view>
 			</view>
 			<view class="Account-btn">
+<<<<<<< HEAD
 				<view class="Account-btn-list" v-for="(item,index) in AccountBtn" :key="index" @click="GoNav(index)">
+=======
+				<view class="Account-btn-list" v-for="(item,index) in AccountBtn" :key="index">
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 					{{item}}
 				</view>
 			</view>
@@ -57,8 +79,12 @@
 	export default {
 		data() {
 			return {
+<<<<<<< HEAD
 				AccountBtn:['账户详情','历史余额','银企对账','回单查询'],
 				eye:false
+=======
+				AccountBtn:['账户详情','历史余额','银企对账','回单查询']
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			};
 		},
 		components:{
@@ -69,6 +95,7 @@
 				uni.navigateTo({
 					url:'/pages/subsidiary/subsidiary'
 				})
+<<<<<<< HEAD
 			},
 			GoDefaultSetting(){
 				uni.navigateTo({
@@ -81,6 +108,8 @@
 			GoNav(index){
 				index === 0 ? uni.navigateTo({url:'/pages/AccountDetali/AccountDetali'}) : ''
 				index === 1 ? uni.navigateTo({url:'/pages/HistoricalBalance/HistoricalBalance'}) : ''
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			}
 		}
 	}

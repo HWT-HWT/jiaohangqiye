@@ -1,14 +1,22 @@
 <template>
 	<view class="subsidiary">
+<<<<<<< HEAD
 		<company :value="'活期一般户'"></company>
 		
 		<view class="choices">
 			<view class="choices-btn" v-for="(item,index) in choicesBtnList" :key="index" @tap="btnIsTrue(index)" >
+=======
+		<company></company>
+		
+		<view class="choices">
+			<view class="choices-btn" v-for="(item,index) in choicesBtnList" :key="index" @tap="btnIsTrue(index)">
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				{{item.name}}
 				<image class="choices-btn-image" :src="item.icon" mode=""></image>
 			</view>
 		</view>
 		
+<<<<<<< HEAD
 		<view class="zzc" v-if="ZzcTrue" @click="close()">
 			<view class="zzc-text" v-for="(item,index) in zzc" :key="index">
 				<text>{{item}}</text>
@@ -18,6 +26,8 @@
 			</view>
 		</view>
 		
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		<view v-if="Istrue">
 			
 			<view class="btnBox" >
@@ -39,7 +49,11 @@
 					<text v-else>{{hopeBeginTime[0]+'至'+hopeBeginTime[1]}}</text>
 					<br />
 					<view v-if="hopeBeginTime">
+<<<<<<< HEAD
 						支出-1829442.9 &nbsp; 收入<text style="color: red;">+1860002.00</text>
+=======
+						支出-1213976.78 &nbsp; 收入<text style="color: red;">+1225002.00</text>
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 						<br />
 						<text style="color: #afafaf; font-size: 20rpx;">共 {{datalist.length-3}} 笔</text>
 						
@@ -60,7 +74,11 @@
 						<p style="font-size: 25rpx;color: #ccc;">{{item.minititle}}</p>
 					</view>
 					<view class="list-Money-rigth content">
+<<<<<<< HEAD
 						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;"><text :style="{'color':item.color}">{{item.money}}</text></p>
+=======
+						<p style="width: 100%; ; font-size: 28rpx; font-weight: bold;">{{item.money}}</p>
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 						<p style="width: 100%; ; font-size: 23rpx;color: #ccc;">{{item.time}}</p>
 					</view>
 				</view>
@@ -179,6 +197,7 @@
 				],
 				
 				datalist:[
+<<<<<<< HEAD
 					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'+￥1800000.00',time:'2024-05-31 11:11:18',color:'red'},
 					{name:'陈龙',namelist:'6228480317112781172',minititle:'',money:'-￥1000000.00',time:'2024-05-31 14:53:49'},
 					{name:'',namelist:'',minititle:'手续费',money:'-￥20.00',time:'2024-05-31 14:53:49'},
@@ -208,6 +227,28 @@
 				zzc:['人民币'],
 				zzcOne:['人民币'],
 				zzcTow:['普通查询','正月查询'],
+=======
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'+￥1200000.00',time:'2024-05-31 11:11:22'},
+					{name:'应付代收业务款项-代付业务专户',namelist:'441114012890900100012799',minititle:'代发营销费用-',money:'-￥1200000.00',time:'2024-05-31 11:53:49'},
+					{name:'曾凡忠',namelist:'6222033602015955766',money:'+￥25000.00',time:'2024-06-21 17:08:51'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥2570.40',time:'2024-06-21 17:16:38'},
+					{minititle:'本行个人账户成功笔数代收费用标准',money:'-￥0.70',time:'2024-06-22 06:01:34'},
+					{minititle:'20240524开户手续费缓收/205000420240524',money:'-￥50.00',time:'2024-07-02 06:06:19'},
+					{minititle:'20240524USBKEY费缓收（网银）/2051000420',money:'-￥38.00',time:'2024-07-02 06:06:21'},
+					{minititle:'2024网银服务年费',money:'-￥150.00',time:'2024-07-03 16:10:55'},
+					{minititle:'2024网银证书服务年费,用户00002',money:'-￥75.00',time:'2024-07-03 17:22:12'},
+					{minititle:'2024网银证书服务年费,用户00001',money:'-￥75.00',time:'2024-07-03 17:50:42'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-07-22 16:48:20'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-08-21 16:21:10'},
+					{name:'20240922利息入账',namelist:'4411140127010100100001899',minititle:'贷款利息',money:'+￥2.00',time:'2024-08-21 16:21:12'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-09-23 16:16:11'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-10-23 16:15:21'},
+					{name:'广州伊玉贸易有限公司',namelist:'441899999903000775608',minititle:'贷款利息',money:'-￥3672.56',time:'2024-11-23 16:15:55'},
+				],
+				hopeBeginTime: '',
+				dateKey: '',
+				Istrue:true
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			};
 		},
 		components:{
@@ -227,6 +268,7 @@
 				this[this.dateKey] = str || ''
 			},
 			btnIsTrue(index){
+<<<<<<< HEAD
 				this.ZzcTrue = false
 				if(index === 0){
 					this.ZzcTrue = !this.ZzcTrue
@@ -235,16 +277,21 @@
 					this.ZzcTrue = !this.ZzcTrue
 					this.zzc = this.zzcTow
 				}
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				index === 2 ? this.Istrue = false : this.Istrue = true
 			},
 			rigth(){
 				this.Istrue = true
+<<<<<<< HEAD
 			},
 			btn(index){
 				 
 			},
 			close(){
 				this.ZzcTrue = false;
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			}
 		}
 		
@@ -282,6 +329,7 @@
 				color: #406fed;
 			}
 		}
+<<<<<<< HEAD
 		.zzc{
 			width: 100%;
 			height: 100%;
@@ -299,6 +347,8 @@
 				border-top: 1px solid #ccc;
 			}
 		}
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		.btnBox{
 			width: 95%;
 			height: 100rpx;

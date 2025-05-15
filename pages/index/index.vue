@@ -4,9 +4,14 @@
 			<view class="placeholder">
 				
 			</view>
+<<<<<<< HEAD
 			
 			<SearchBox></SearchBox>
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			
+			<SearchBox></SearchBox>
+
 			<view class="navigation-ioc">
 				<view class="navigation-ioc-name" v-for="(item,index) in title" :key="index">
 					<view class="ioc" @click="NavToDetail(index)">
@@ -35,6 +40,7 @@
 		</view>
 		
 		<view class="announcement">
+<<<<<<< HEAD
 			<view class="announcement-box">
 				<view class="announcement-text">
 						<view><uni-tag text="公告"custom-style="background-color: #feeeaf; border-color: #feeeaf; color:#dada34;" style="font-weight: bold;" size='small'></uni-tag></view>
@@ -45,6 +51,13 @@
 					<p>关于交通银行部分国际业务服务收费表...</p>
 					<p v-if="account">暂无新通知</p>
 				</view>
+=======
+			<view class="announcement-ioc">
+				<image class="ioc-image" src="../../static/jiaohang/gong_g.png" mode=""></image>
+			</view>
+			<view class="announcement-title">
+				<text style="border-right: 1px solid #ccc; padding: 3px; ">关于交通银行部分国际业务服务收费表...</text>
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			</view>
 			<view class="announcement-image">
 				<image class="announcement-ioc" src="../../static/jiaohang/6Q.png" mode=""></image>
@@ -363,6 +376,7 @@
 				index === 9 ? gologin('/pages/more/more') :''
 			},
 			
+<<<<<<< HEAD
 			quit(){
 				uni.removeStorage({
 					key:'account',
@@ -387,14 +401,20 @@
 					url:'/pages/login/login'
 				})
 			},
+=======
+			
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		  },
 		components:{
 			Zone,
 			videoVue,
 			SearchBox
+<<<<<<< HEAD
 		},
 		onPageScroll(TopScroll) {
 			this.top = TopScroll.scrollTop/100
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		}
 	}
 </script>
@@ -677,12 +697,20 @@
 			// border: 1px solid;
 			margin: 0 auto;
 			margin-top: 20rpx;
+<<<<<<< HEAD
 			border-radius:10rpx;
+=======
+			border-radius:10px;
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			background-color: #fff;
 			image{
 				width: 100%;
 				height: 100%;
+<<<<<<< HEAD
 				border-radius:10rpx;
+=======
+				border-radius:10px;
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			}
 			.Zone-title{
 				width: 100%;

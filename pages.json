@@ -113,6 +113,7 @@
 				"navigationBarTitleText" : "",
 				"navigationStyle": "default"
 			}
+<<<<<<< HEAD
 		},
 		{
 			"path" : "pages/TaskCenter/TaskCenter",
@@ -216,6 +217,8 @@
 				"navigationBarTitleText" : "历史余额查询",
 				"navigationStyle": "default"
 			}
+=======
+>>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		}
 	],
 	"globalStyle": {
