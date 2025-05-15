@@ -2,7 +2,7 @@
 	<view class="title" :style="{'border-left':'2px solid '+BorderColor}">
 		<view class="left">
 			<slot name="text"></slot>
-			<slot name='icon'></slot>	
+			<slot name='icon'></slot>
 		</view>
 		<view class="rigth">
 			<slot name='rigth'></slot>
@@ -23,7 +23,7 @@
 				type: String,
 				default: 'red' // 提供一个默认值
 			}
-		}
+		},
 	}
 </script>
 

@@ -6,7 +6,7 @@
 				 <view style="color: #5b6eb7; border-radius:5rpx ; margin-left: 40rpx;width: 100rpx;height: 40rpx;  background-color: #edf0ff; display: flex; justify-content: center; align-items: center; font-size: 25rpx;">正常</view>
 			</view>
 			<view class="repayment-list-text">
-				<text class="text">贷款余额: </text><text> ￥1,200,000.00</text>
+				<text class="text">贷款余额: </text><text> ￥1,800,000.00</text>
 			</view>
 			<view class="repayment-list-text">
 				<text class="text">贷款种类: </text><text> 普通贷款</text>
@@ -15,7 +15,7 @@
 				<text class="text">贷款期限: </text> <text> 2024-05-31 至 2025-05-31</text>
 			</view>
 			<view class="repayment-list-text">
-				<text class="text">贷款金额: </text> <text> ￥1,200,000.00</text>
+				<text class="text">贷款金额: </text> <text> ￥1,800,000.00</text>
 			</view>
 		</view>
 		

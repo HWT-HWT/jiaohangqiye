@@ -6,7 +6,7 @@
 			</view>
 			
 			<SearchBox></SearchBox>
-
+			
 			<view class="navigation-ioc">
 				<view class="navigation-ioc-name" v-for="(item,index) in title" :key="index">
 					<view class="ioc" @click="NavToDetail(index)">
@@ -18,6 +18,8 @@
 				</view>
 			</view>
 		</view>
+		
+		
 		
 		<view class="layout-list">
 			<view class="list">
@@ -33,21 +35,27 @@
 		</view>
 		
 		<view class="announcement">
-			<view class="announcement-ioc">
-				<image class="ioc-image" src="../../static/jiaohang/gong_g.png" mode=""></image>
-			</view>
-			<view class="announcement-title">
-				<text style="border-right: 1px solid #ccc; padding: 3px; ">关于交通银行部分国际业务服务收费表...</text>
+			<view class="announcement-box">
+				<view class="announcement-text">
+						<view><uni-tag text="公告"custom-style="background-color: #feeeaf; border-color: #feeeaf; color:#dada34;" style="font-weight: bold;" size='small'></uni-tag></view>
+						
+						<view v-if="account"><uni-tag text="通知"custom-style="background-color: #eaf0fe; border-color: #eaf0fe; color:#5a65dc;" style="font-weight: bold;" size='small'></uni-tag></view>
+				</view>
+				<view class="announcement-title">
+					<p>关于交通银行部分国际业务服务收费表...</p>
+					<p v-if="account">暂无新通知</p>
+				</view>
 			</view>
 			<view class="announcement-image">
 				<image class="announcement-ioc" src="../../static/jiaohang/6Q.png" mode=""></image>
 			</view>
 		</view>
 		
+		
 		<view class="banner">
-			<swiper class="swiper" circular :indicator-dots="true" :autoplay="true" indicator-color='#b1b6ff' indicator-active-color='#fff' >
-				<swiper-item v-for="item in 3" :key="item">
-					<image class="swiper-iamge" src="../../static/jiaohang/bg_1.png" mode=""></image>
+			<swiper class="swiper" circular :indicator-dots="true" :autoplay="true" indicator-color='#ccc' indicator-active-color='#fff' >
+				<swiper-item v-for="(item,index) in BgImag" :key="index">
+					<image class="swiper-iamge" :src="item" mode=""></image>
 				</swiper-item>
 			</swiper>
 		</view>
@@ -247,6 +255,28 @@
 				</view>
 			</view>
 		</view>
+		
+		<view class="topNavTitle" :style="{'opacity':top}">
+			<view class="placeholder">
+				
+			</view>
+			<view class="navigation-search">
+				<view class="search-name" v-if="!account" @click="login">
+					登录
+				</view>
+				<view class="search-name" v-else @click="quit">
+					退出
+				</view>
+				<view class="search-search">
+					<uni-search-bar class="uni-mt-10"  radius="50" bg-color="none"  placeholder="搜索" clearButton="auto" cancelButton="none"  />
+				</view>
+				<view class="search-ioc">
+					<view class="ioc" v-for="(item,index) in 3" :key='item'>
+						<image class="ioc-image" :src='`../../static/jiaohang/Nav_my_${index+1}.png`' mode=""></image>
+					</view>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
@@ -298,7 +328,10 @@
 					{
 						title:'从债市发展讲起,聊聊利率债的配置价值|多知产周记',data:'中欧基金 94看过',time:'11-06',bgImage:'../../static/jiaohang/hot_3.png',
 					}
-				]
+				],
+				BgImag:['../../static/jiaohang/bg_1.png','../../static/jiaohang/bg_8.png','../../static/jiaohang/bg_9.png','../../static/jiaohang/bg_10.png'],
+				top:'',
+				account:''
 			}
 		},
 		
@@ -307,6 +340,8 @@
 		    this.updateCurrentTime();
 		    // 每隔一秒更新一次时间
 		    setInterval(this.updateCurrentTime, 1000);
+			this.account = uni.getStorageSync('account')
+			this.top=0;
 		},
 		methods: {
 			updateCurrentTime() {
@@ -328,12 +363,38 @@
 				index === 9 ? gologin('/pages/more/more') :''
 			},
 			
-			
+			quit(){
+				uni.removeStorage({
+					key:'account',
+					// 删除用户信息时操作
+					success: function (res) {
+						this.account='',
+						// 跳转到login
+						uni.reLaunch({
+							url:'/pages/login/login'
+						})
+						// 弹出提示
+						uni.showToast({
+							title: '退出成功',
+							icon: 'none',
+							duration:2000
+						})
+					}
+				})
+			},
+			login(){
+				uni.navigateTo({
+					url:'/pages/login/login'
+				})
+			},
 		  },
 		components:{
 			Zone,
 			videoVue,
 			SearchBox
+		},
+		onPageScroll(TopScroll) {
+			this.top = TopScroll.scrollTop/100
 		}
 	}
 </script>
@@ -351,7 +412,9 @@
 				width: 100%;
 				height: 15%;
 			}
+			
 			.navigation-search{
+				
 				width: 100%;
 				height:30%;
 				display: flex;
@@ -378,7 +441,7 @@
 						display: flex; 
 						align-items: center;
 						border: 1px solid;
-						border-radius: 50px;
+						border-radius: 50rpx;
 						color: #fff;
 					}
 				}
@@ -489,17 +552,44 @@
 		
 		.announcement{
 			width: 95%;
-			height: 100rpx;
-			// border: 1px solid;
 			margin: 0 auto;
-			border-radius: 5px;
+			border-radius: 5rpx;
 			margin-top: 10px;
 			display: flex;
+			align-items: center;
+			flex-wrap:wrap;
+			align-items: center;
 			background-color: #fff;
+			padding: 20rpx;
+			.announcement-box{
+				flex: 1;
+				display: flex;
+				align-items: center;
+				flex-wrap:wrap;
+				border-right: 1px solid #e7e7e7;
+				line-height: 50rpx;
+				.announcement-text{
+					width: 15%;
+					margin: 0 20rpx;
+					display: flex;
+					flex-wrap: wrap;
+				}
+				.announcement-title{
+					flex: 1;
+					text-align-last: 1;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					font-size:28rpx;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					padding: 5rpx;
+				}
+			}
+			
 			.announcement-ioc{
 				width: 15%;
 				height: 100%;
-				// border: 1px solid;
 				display: flex;
 				align-items: center;
 				.ioc-image{
@@ -507,24 +597,15 @@
 					height: 100rpx;
 				}
 			}
-			.announcement-title{
-				flex: 1;
-				font-size:28rpx;
-				display: flex;
-				align-items: center;
-			}
+			
 			.announcement-image{
-				width: 15%;
-				height: 100%;
+				padding: 10rpx;
 				display: flex;
-				justify-content: center;
 				align-items: center;
+				justify-content: center;
 				.announcement-ioc{
-					// width: 40%;
 					width: 60rpx;
 					height: 70rpx;
-					// height: 70%;
-					// padding: 20px;
 				}
 			}
 		}
@@ -539,7 +620,7 @@
 				.swiper-iamge{
 					width: 100%;
 					height: 100%;
-					border-radius:10px;
+					border-radius:5rpx;
 				}
 			}
 		}
@@ -568,7 +649,7 @@
 				image{
 					width: 100%;
 					height: 100%;
-					border-radius: 10px;
+					border-radius: 10rpx;
 				}
 				.bj-bt{
 					width: 45%;
@@ -596,12 +677,12 @@
 			// border: 1px solid;
 			margin: 0 auto;
 			margin-top: 20rpx;
-			border-radius:10px;
+			border-radius:10rpx;
 			background-color: #fff;
 			image{
 				width: 100%;
 				height: 100%;
-				border-radius:10px;
+				border-radius:10rpx;
 			}
 			.Zone-title{
 				width: 100%;
@@ -663,7 +744,7 @@
 			background-color: #fff;
 			padding-bottom:80rpx;
 			margin: 20rpx auto;
-			border-radius: 10px;
+			border-radius: 10rpx;
 			.video-title{
 				width: 85%;
 				height: 10%;
@@ -698,7 +779,7 @@
 			padding-bottom: 40rpx;
 			background-color: #fff;
 			margin: 0 auto;
-			border-radius: 10px;
+			border-radius: 10rpx;
 			.customer-title{
 				width: 85%;
 				height: 20%;
@@ -752,7 +833,7 @@
 			padding-bottom: 40rpx;
 			background-color: #fff;
 			margin: 0 auto;
-			border-radius: 10px;
+			border-radius: 10rpx;
 			.foreign-exchange-title{
 				width: 85%;
 				height: 20%;
@@ -805,7 +886,7 @@
 			// border: 1px solid;
 			background-color: #fff;
 			margin: 20rpx auto;
-			border-radius: 10px;
+			border-radius: 10rpx;
 			.Hot-title{
 				width: 90%;
 				height: 15%;
@@ -859,6 +940,64 @@
 						width: 100%;
 						height: 100%;
 						
+					}
+				}
+			}
+		}
+		.topNavTitle{
+			width: 100%;
+			background-color: #fff;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			top: 0;
+			flex-wrap: wrap;
+			padding-top: 90rpx;
+			.navigation-search{
+				width: 100%;
+				height:30%;
+				display: flex;
+				// border: 1px solid;
+				.search-name{
+					padding: 30rpx;
+					color: #000;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 30rpx;
+				}
+				.search-search{
+					flex: 1;
+					color: #000;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding-right: 20rpx;
+					.uni-mt-10{
+						width: 100%;
+						height: 20rpx;
+						display: flex; 
+						align-items: center;
+						border: 1px solid;
+						border-radius: 50px;
+						color: #000;
+					}
+				}
+				.search-ioc{
+					width: 25%;
+					color: #000;
+					display: flex;
+					align-items: center;
+					justify-content:space-between;
+					.ioc{
+						padding:0 10rpx;
+						display: flex;
+						align-items: center;
+						.ioc-image{
+							width: 40rpx;
+							height: 40rpx;
+						}
 					}
 				}
 			}

@@ -113,6 +113,109 @@
 				"navigationBarTitleText" : "",
 				"navigationStyle": "default"
 			}
+		},
+		{
+			"path" : "pages/TaskCenter/TaskCenter",
+			"style" : 
+			{
+				"navigationBarTitleText" : ""
+			}
+		},
+		{
+			"path" : "pages/TransferAccounts/TransferAccounts",
+			"style" : 
+			{
+				"navigationBarTitleText" : "企业转账",
+				"navigationStyle": "default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path" : "pages/SelectAccount/SelectAccount",
+			"style" : 
+			{
+				"navigationBarTitleText" : "选择付款方账户",
+				"navigationStyle": "default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path" : "pages/quota/quota",
+			"style" : 
+			{
+				"navigationBarTitleText" : "转账限额",
+				"navigationStyle": "default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path" : "pages/DefaultSetting/DefaultSetting",
+			"style" : 
+			{
+				"navigationBarTitleText" : "默认账号设置",
+				"navigationStyle": "default"
+			}
+		},
+		{
+			"path" : "pages/AccountDetali/AccountDetali",
+			"style" : 
+			{
+				"navigationBarTitleText" : "账户详情信息",
+				"navigationStyle": "default",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [
+							{
+								"color": "#000",
+								"fontSize": "50rpx",
+								"text": "\ue630",
+								"fontSrc": "static/fonts/uniicons.ttf"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path" : "pages/HistoricalBalance/HistoricalBalance",
+			"style" : 
+			{
+				"navigationBarTitleText" : "历史余额查询",
+				"navigationStyle": "default"
+			}
 		}
 	],
 	"globalStyle": {
@@ -132,6 +235,13 @@
 				"pagePath": "pages/index/index",
 				"selectedIconPath": "/static/jiaohang/gA.png",
 				"iconPath": "static/jiaohang/w91.png"
+				
+			},
+			{
+				"text": "任务中心",
+				"pagePath": "pages/TaskCenter/TaskCenter",
+				"selectedIconPath": "static/jiaohang/gt(1).png",
+				"iconPath": "/static/jiaohang/bC(1).png"
 				
 			},
 			{

@@ -6,13 +6,22 @@
 			</view>
 			
 			<view class="input-text">
-				 <textarea
+				{{value && input ? '￥' :''}}
+				
+				<textarea
+				      v-if="!array.length"
 				      :placeholder="placeholder"
 				      :value="value"
 				      rows="2"
 				      placeholder-style="color: #ccc; font-weight:normal"
-				      style="width: 100%; height: auto; font-sizi:25rpx;"
+				      style="width: 100%; height: auto; font-size:28rpx;"
+					  @input="$emit('input', $event.target.value)"
 				    ></textarea>
+				<view class="uni-list-cell-db" v-else >
+					<picker  @change="bindPickerChange" :value="index" :range="array">
+						<view class="uni-input">{{array[index]}}</view>
+					</picker>
+				</view>
 			</view>
 			
 			<view class="icon">
@@ -27,7 +36,7 @@
 		name:"transfer-Body",
 		data() {
 			return {
-				
+				 index: 0,
 			};
 		},
 		props:{
@@ -36,7 +45,24 @@
 			},
 			value:{
 				type:String
+			},
+			array:{
+				type:[String,Array],
+			},
+			input:{
+				type:Boolean
 			}
+			
+		},
+		methods:{
+			bindPickerChange: function(e) {
+				// console.log('picker发送选择改变，携带值为', e.detail.value)
+				this.index = e.detail.value
+				uni.setStorageSync('index',e.detail.value)
+			},
+		},
+		created() {
+			// console.log(this.$props.array);
 		}
 	}
 </script>

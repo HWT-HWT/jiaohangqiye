@@ -3,7 +3,7 @@
 		
 		<company></company>
 		
-		<view class="DetailSet">
+		<view class="DetailSet" @click="GoDefaultSetting">
 			<view class="DetailSetText">
 				默认账户设置
 			</view>
@@ -17,9 +17,10 @@
 				<view class="Account-title-text">
 					活期账户信息
 				</view>
-				<view class="Account-title-icon">
+				<view class="Account-title-icon" @click="isEye">
 					隐藏
-					<image class="Account-title-icon-image" src="../../static/jiaohang/ioc_eye.png" mode=""></image>
+					<image class="Account-title-icon-image" src="../../static/jiaohang/ioc_eye.png" mode="" v-if="eye"></image>
+					<image class="Account-title-icon-image" src="../../static/jiaohang/eye_hide.png" mode="" v-else></image>
 				</view>
 			</view>
 			<view class="Account-content">
@@ -29,11 +30,11 @@
 					</view>
 					
 					<view class="text">
-						余额:7,352.66
+						余额:{{eye ? "30,544.10" : '******'}}
 					</view>
 					
 					<view class="text">
-						可支付金额7,352.66
+						可支付金额:{{eye ? "30,544.10" : '******'}}
 					</view>
 				</view>
 				<view class="Account-content-icon" @click="NavTo">
@@ -42,7 +43,7 @@
 				</view>
 			</view>
 			<view class="Account-btn">
-				<view class="Account-btn-list" v-for="(item,index) in AccountBtn" :key="index">
+				<view class="Account-btn-list" v-for="(item,index) in AccountBtn" :key="index" @click="GoNav(index)">
 					{{item}}
 				</view>
 			</view>
@@ -56,7 +57,8 @@
 	export default {
 		data() {
 			return {
-				AccountBtn:['账户详情','历史余额','银企对账','回单查询']
+				AccountBtn:['账户详情','历史余额','银企对账','回单查询'],
+				eye:false
 			};
 		},
 		components:{
@@ -67,6 +69,18 @@
 				uni.navigateTo({
 					url:'/pages/subsidiary/subsidiary'
 				})
+			},
+			GoDefaultSetting(){
+				uni.navigateTo({
+					url:'/pages/DefaultSetting/DefaultSetting'
+				})
+			},
+			isEye(){
+				this.eye = !this.eye
+			},
+			GoNav(index){
+				index === 0 ? uni.navigateTo({url:'/pages/AccountDetali/AccountDetali'}) : ''
+				index === 1 ? uni.navigateTo({url:'/pages/HistoricalBalance/HistoricalBalance'}) : ''
 			}
 		}
 	}

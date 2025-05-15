@@ -70,7 +70,7 @@
 				<view class="outlets-content">
 					<view class="outlets-content-name">
 						广州金迪支行
-						<uni-tag style="margin-left: 40rpx;" text="开户行" type="primary" />
+						<uni-tag text="开户行"custom-style="background-color: #ffebed; border-color: #ffebed; color: #c0352c;" style="margin-left: 20rpx; font-weight: bold;"></uni-tag>
 					</view>
 					
 					<view class="outlets-content-text">
@@ -431,7 +431,6 @@
 					.outlets-content-name{
 						width: 100%;
 						height: 40%;
-						// border: 1px solid;
 						font-size: 33rpx;
 						font-weight: bold;
 						display: flex;

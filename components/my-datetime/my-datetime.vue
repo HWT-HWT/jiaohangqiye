@@ -7,7 +7,7 @@
 						<view @click="close"><text class="text1">取消</text></view>
 						<view class="uni-page-head-title" v-if="titleShow"></view>
 						<view class="head-title">
-							交易日期
+							交易时间
 						</view>
 						<view><text class="text1 blue" @click="ok">确定</text></view>
 					</view>
@@ -35,8 +35,8 @@
 						</view>
 						
 						<view class="start-end">
-							<input v-model="startTime" class="start-end-input" type="text" disabled placeholder="开始时间" @click="status"/>
-							<input v-model="endTime" class="start-end-input" type="text" disabled placeholder="结束时间" @click="end"/>
+							<view v-model="startTime" class="start-end-input" type="text"  placeholder="开始时间" @click="status">{{startTime}}</view>
+							<view v-model="endTime" class="start-end-input" type="text" placeholder="结束时间" @click="end">{{endTime}}</view>
 						</view>
 					</view>
 					
@@ -278,9 +278,11 @@
 			},
 			status(){
 				this.StarEnd = 0
+				console.log(this.StarEnd);
 			},
 			end(){
 				this.StarEnd = 1
+				console.log(this.StarEnd);
 			},
 			setStart(){
 				if(this.StarEnd === 0){
@@ -355,6 +357,7 @@
 		display: flex;
 		.start-end-input{
 			display: flex;
+			align-items: center;
 			margin: 0 auto;
 			margin-top: 10rpx;
 			margin-left: 10rpx;
