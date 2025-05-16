@@ -127,11 +127,11 @@
 			},
 			colorChange(e) {
 				if (this.styleType !== e.detail.value) {
-<<<<<<< HEAD
+
 					// console.log(e.detail.value);
-=======
+
 					console.log(e.detail.value);
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
+
 					this.activeColor = e.detail.value
 				}
 			},
@@ -147,17 +147,17 @@
 			// 跳转登录 配置账户密码
 			Quindex(){
 				if(this.account =='cwq691107' && this.password =="cwq21092"){
-<<<<<<< HEAD
+
 					setTimeout(()=>{
 						uni.reLaunch({
 							url:'/pages/index/index'
 						})
 					},500)
-=======
+
 					uni.reLaunch({
 						url:'/pages/index/index'
 					})
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
+
 					uni.setStorageSync('account',{account:this.account,pasw:this.password})
 					uni.showToast({
 						title:'登录成功',
@@ -165,14 +165,14 @@
 						duration:1500
 					})
 				}else{
-<<<<<<< HEAD
+
 					uni.showToast({
 						title:'账号或密码错误',
 						icon:"none"
 					})
-=======
+
 					console.log("密码错误");
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
+
 				}
 			},
 			// 不登陆

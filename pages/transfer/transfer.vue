@@ -7,22 +7,6 @@
 					付方信息
 				</template>
 				<template #icon>
-<<<<<<< HEAD
-					<image style="width: 30rpx;height: 30rpx;margin-left: 20rpx;" src="@/static/jiaohang/eye_hide.png" mode="" v-if="eye" @click="Iseye"></image>
-					<image style="width: 30rpx;height: 30rpx;margin-left: 20rpx;" src="@/static/jiaohang/ioc_eye.png" mode="" v-else @click="Iseye"></image>
-				</template>
-			</transferTitleVue>
-			
-			<view class="content" @click="SelectAccount">
-				<view class="TextLfet">
-					<text>4411 6859 6013 0030 4942 7</text>
-					<p style="margin-top: 20rpx;">广州伊玉贸易有限公司</p>
-					<p>可用余额: {{ eye ? '******' : '￥30,544.10'}}</p>
-				</view>
-				<view class="iconRigth">
-					<image src="@/static/bg-image/ioc.png" mode=""></image>
-				</view>	
-=======
 					<image style="width: 35rpx;height: 35rpx;margin-left: 20rpx;" src="@/static/jiaohang/ioc_eye.png" mode=""></image>
 				</template>
 			</transferTitleVue>
@@ -36,7 +20,6 @@
 				<view class="iconRigth">
 					<image src="@/static/bg-image/ioc.png" mode=""></image>
 				</view>
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			</view>
 		</view>
 		
@@ -47,20 +30,12 @@
 					交易信息
 				</template>
 				<template #rigth>
-<<<<<<< HEAD
-					<text @click="quota">额度查询</text>
-=======
 					额度查询
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				</template>
 			</transferTitleVue>
 			
 			<view v-for="(item,index) in transferBodyList" :key="index">
-<<<<<<< HEAD
-				<transferBodyVue :placeholder='item.placeholder' v-model='item.value' :input='index === 2 ? true : false ' :array='index === 3 ?  transferBodyList[index].array : "" '>
-=======
 				<transferBodyVue :placeholder='item.placeholder' :value='item.value' >
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 					<template #text>
 						{{item.name}} <image v-if='item.gthIstrue' style="width: 30rpx;height: 30rpx; margin-left: 10rpx;" src="../../static/bg-image/gth.svg" mode=""></image>
 					</template>
@@ -86,11 +61,7 @@
 				</template>
 			</transferTitleVue>
 			
-<<<<<<< HEAD
-			<transferBodyVue :placeholder='"仅付款方回单可见,最多20个字符选择(选填)"'  :array="[]">
-=======
 			<transferBodyVue :placeholder='"仅付款方回单可见,最多20个字符选择(选填)"'>
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				<template #text>
 					企业制作凭证号
 				</template>
@@ -108,22 +79,14 @@
 		
 		<view class="foot-btn">
 			<view class="btn">
-<<<<<<< HEAD
-				<button type="primary" plain="true" @click="closed">清空</button>
-=======
 				<button type="primary" plain="true" >清空</button>
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			</view>
 			<view class="btn">
 				<button type="primary" plain="true" style="background:#eeeeee; color:#999;">暂存</button>
 			</view>
 			
 			<view class="Maxbtn">
-<<<<<<< HEAD
-				<button type="primary" plain="true" @click="nxet">下一步</button>
-=======
 				<button type="primary" plain="true">下一步</button>
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			</view>
 		</view>
 		
@@ -134,49 +97,17 @@
 			3、在交易授权完成后，可通过“转账记录查询”菜单功能核实该笔转账业务的处理结果，避免重复提交支付指令所造成的损失。当交易状态处于“处理中”时，请耐心等待处理结果。<br>
 			4、常用账号为贵司认可的经常性交易对手，上海地区客户添加常用账号后，贵司向该类账户转账不必另外通过短信等方式进行验证。<br>
 		</view>
-<<<<<<< HEAD
-		
-		
-			<view class="uni-list">
-				<view class="uni-list-cell">
-					
-				</view>
-			</view>
-=======
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
   </view>
 </template>
 
 <script>
 	import transferTitleVue from '@/components/transfer-title.vue';
 	import transferBodyVue from '@/components/transfer-Body.vue';
-<<<<<<< HEAD
-	import {gologin} from '@/components/login.js'
-=======
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 export default {
 	data(){
 		return{
 			transferBodyList:[
 				{
-<<<<<<< HEAD
-					placeholder:'请输入收款账号(必填)',name:'收款方账户',imageIcon:'../../static/bg-image/saoyisao.svg', value:''
-				},
-				{
-					placeholder:'请输入收款方户名(必填)',name:'收款方户名',imageIcon:'../../static/bg-image/xingming.svg', value:''
-				},
-				{
-					placeholder:'￥请输入金额(必填)',name:'金额', value:''
-				},
-				{
-					name:'转账方式',imageIcon:'../../static/bg-image/youbianjiantou.svg',gthIstrue:true,  array: ['实时', '普通', '次日', '指定日期'],
-				},
-				{
-					placeholder:'请选择收款方银行(必填)',name:'收款方银行',imageIcon:'../../static/bg-image/youbianjiantou.svg',Ischebox:true,CheckText:[{text: '保持常用收款人',value: 0}], value:''
-				},
-				{
-					placeholder:'最多66个中文(必填)',name:'用途',imageIcon:'../../static/bg-image/youbianjiantou.svg',gthIstrue:true,Ischebox:true,CheckText:[{text: '保存用途',value: 0}], value:''
-=======
 					placeholder:'请输入收款账号(必填)',name:'收款方账户',imageIcon:'../../static/bg-image/saoyisao.svg'
 				},
 				{
@@ -193,66 +124,19 @@ export default {
 				},
 				{
 					placeholder:'最多66个中文(必填)',name:'用途',imageIcon:'../../static/bg-image/youbianjiantou.svg',gthIstrue:true,Ischebox:true,CheckText:[{text: '保存用途',value: 0}]
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				}
 			],
 			hobby: [{
 					text: '保持常用收款人',
 					value: 0
-<<<<<<< HEAD
-			}],
-			eye:true,
-=======
 				}],
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		};
 	},
 	components:{
 		transferTitleVue,
-<<<<<<< HEAD
-		transferBodyVue,
-	},
-	methods:{
-		nxet(){
-			this.transferBodyList.forEach((item,index)=>{
-				if(item.value === ''){
-					 uni.showToast({title: '未填写'+item.name,icon:'none'})
-				}
-			})
-			
-			const isNxet = this.transferBodyList.every(item=>item.value !=='' && item.value !== null)
-			
-			isNxet === true ? gologin('/pages/TransferAccounts/TransferAccounts') : '';
-			
-			uni.setStorageSync('datali',this.transferBodyList)
-		},
-		// 清空
-		closed(){
-			this.transferBodyList.forEach((item,index)=>{
-				index === 3 ? item.value = '实时': item.value = ''
-			})
-		},
-		Iseye(){
-			this.eye = !this.eye
-		},
-		// 选择付款房账户
-		SelectAccount(){
-			uni.navigateTo({
-				url:'/pages/SelectAccount/SelectAccount?NavTitle=选择付款方账户'
-			})
-		},
-		// 转账限额
-		quota(){
-			uni.navigateTo({
-				url:'/pages/quota/quota'
-			})
-		},
-	},
-=======
 		transferBodyVue
 	}
 	
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 }
 </script>
 

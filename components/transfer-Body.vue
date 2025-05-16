@@ -6,31 +6,24 @@
 			</view>
 			
 			<view class="input-text">
-<<<<<<< HEAD
+
 				{{value && input ? '￥' :''}}
 				
 				<textarea
 				      v-if="!array.length"
-=======
-				 <textarea
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				      :placeholder="placeholder"
 				      :value="value"
 				      rows="2"
 				      placeholder-style="color: #ccc; font-weight:normal"
-<<<<<<< HEAD
 				      style="width: 100%; height: auto; font-size:28rpx;"
-					  @input="$emit('input', $event.target.value)"
-				    ></textarea>
-				<view class="uni-list-cell-db" v-else >
+					  @input="$emit('input', $event.target.value)">
+				</textarea>
+				
+				<view v-else >
 					<picker  @change="bindPickerChange" :value="index" :range="array">
 						<view class="uni-input">{{array[index]}}</view>
 					</picker>
 				</view>
-=======
-				      style="width: 100%; height: auto; font-sizi:25rpx;"
-				    ></textarea>
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			</view>
 			
 			<view class="icon">
@@ -45,11 +38,7 @@
 		name:"transfer-Body",
 		data() {
 			return {
-<<<<<<< HEAD
 				 index: 0,
-=======
-				
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 			};
 		},
 		props:{
@@ -58,7 +47,7 @@
 			},
 			value:{
 				type:String
-<<<<<<< HEAD
+
 			},
 			array:{
 				type:[String,Array],
@@ -77,11 +66,8 @@
 		},
 		created() {
 			// console.log(this.$props.array);
-=======
 			}
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		}
-	}
 </script>
 
 <style lang="scss" scoped>
@@ -99,7 +85,6 @@
 				display: flex;
 				align-items: center;
 			}
-			
 			.input-text{
 				padding: 20rpx;
 				flex: 1;

@@ -59,7 +59,7 @@
 
 <style lang="scss" scoped>
 	.navigation-search{
-		width: 100%;
+		width:100vw;
 		height:30%;
 		display: flex;
 		// border: 1px solid;

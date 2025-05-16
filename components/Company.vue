@@ -1,20 +1,12 @@
 <template>
 	<view class="title">
-<<<<<<< HEAD
-		<view class="title-text" @click="GoSelectAccount">
-=======
 		<view class="title-text">
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				<view class="DetailName">
 					<view class="Name">
 						广州伊玉贸易有限公司
 					</view>
 					<view class="stateName">
-<<<<<<< HEAD
-						{{ value || "活期一般户" }}
-=======
 						活期
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 					</view>
 					<view class="stateName">
 						正常
@@ -40,21 +32,6 @@
 			return {
 				
 			};
-<<<<<<< HEAD
-		},
-		methods:{
-			GoSelectAccount(){
-				uni.navigateTo({
-					url:'/pages/SelectAccount/SelectAccount?NavTitle=选择账户'
-				})
-			}
-		},
-		props:{
-			value:{
-				type:String
-			}
-=======
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 		}
 	}
 </script>
@@ -83,10 +60,7 @@
 				font-weight: bold;
 			}
 			.stateName{
-<<<<<<< HEAD
-=======
 				width: 15%;
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 				height: 100%;
 				margin-left:15rpx;
 				padding: 5rpx;

@@ -2,11 +2,11 @@
 	<view class="title" :style="{'border-left':'2px solid '+BorderColor}">
 		<view class="left">
 			<slot name="text"></slot>
-<<<<<<< HEAD
+
 			<slot name='icon'></slot>
-=======
+
 			<slot name='icon'></slot>	
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
+
 		</view>
 		<view class="rigth">
 			<slot name='rigth'></slot>
@@ -27,11 +27,8 @@
 				type: String,
 				default: 'red' // 提供一个默认值
 			}
-<<<<<<< HEAD
+
 		},
-=======
-		}
->>>>>>> 55b46b4b74daf86d01e862d1951a0c956191f667
 	}
 </script>
 
